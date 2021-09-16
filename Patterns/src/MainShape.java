@@ -5,24 +5,42 @@ public class MainShape {
 	public static void main(String[] args) {
 		ShapeFactory SF = new ShapeFactory();
 		Scanner in = new Scanner(System.in);
-		System.out.println(
-				"Select a shape to be printed \n1.Diamond \n2.Isosceles Triangle \n3.Right Angle \n4.Right Angle Mirrored \n5.Rectangle\n");
-		int shapeno = in.nextInt();
-		System.out.println("\nEnter number of rows");
-		int rows = in.nextInt();
-		int c = 2;
-		if (shapeno == 5) {
-			Shapes rectangle = SF.getObjectForShapes(shapeno);
-			System.out.println(rectangle.getShape(rows));
-		}
+		int shapeno, rows = 0;
+		do {
+			System.out.println(
+					"Select a shape to be printed \n1.Diamond \n2.Isosceles Triangle \n3.Right Angle \n4.Right Angle Mirrored \n5.Rectangle \nPress any other number to EXIT");
+			shapeno = in.nextInt();
 
-		Shapes shape = SF.getObjectForShapes(shapeno);
-		try {
-			System.out.println(shape.getShape(rows, c));
-		} catch (IllegalArgumentException e) {
-			System.out.println("This shape must have 2 arguments");
-		}
+			if (shapeno > 0 && shapeno < 6) {
+				System.out.println("\nEnter number of rows");
+				rows = in.nextInt();
+			}
 
+			if (shapeno == 5) {
+				System.out.println("\nEnter number of columns");
+				int columns = in.nextInt();
+				try {
+					Shapes rectangle = SF.getObjectForShapes(shapeno);
+					System.out.println(rectangle.getShape(rows, columns));
+				} catch (IllegalArgumentException e) {
+					System.out.println("2 Arguments required for this Shape\n");
+				}
+			}
+
+			else {
+				try {
+					Shapes shape = SF.getObjectForShapes(shapeno);
+					System.out.println(shape.getShape(rows));
+
+				} catch (IllegalArgumentException e) {
+					System.out.println("1 Argument is enough for this Shape");
+				} catch (NullPointerException e) {
+					System.out.println("Select shape between 1-5\n");
+				} finally {
+					System.out.println("Exited");
+				}
+			}
+		} while (shapeno > 0 && shapeno < 6);
 		in.close();
 	}
 }

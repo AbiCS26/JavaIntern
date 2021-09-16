@@ -1,23 +1,20 @@
 
 public class ShapeFactory {
 	public Shapes getObjectForShapes(int number) {
-		if (number == 0)
-			System.out.println("Enter correct value");
-		else if (number == 1)
+		switch (number) {
+
+		case 1:
 			return new Diamond();
-
-		else if (number == 2)
+		case 2:
 			return new IsoscelesTriangle();
-
-		else if (number == 3)
+		case 3:
 			return new RightAngle();
-
-		else if (number == 4)
+		case 4:
 			return new RightAngleMirrored();
-
-		else if (number == 5)
+		case 5:
 			return new Rectangle();
+		}
+		throw new NullPointerException();
 
-		return null;
 	}
 }

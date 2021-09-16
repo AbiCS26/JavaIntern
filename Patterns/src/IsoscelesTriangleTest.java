@@ -18,7 +18,7 @@ class IsoscelesTriangleTest {
 
 	@Test
 	void testForException() {
-		IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () -> it.getShape(5, 6));
-		assertEquals("1 Argument is enough for this shape", ex.getMessage());
+		assertThrows(IllegalArgumentException.class, () -> it.getShape(5, 6));
+
 	}
 }

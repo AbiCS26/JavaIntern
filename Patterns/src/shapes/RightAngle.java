@@ -1,3 +1,4 @@
+package shapes;
 
 public class RightAngle implements Shapes {
 

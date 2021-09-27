@@ -1,3 +1,5 @@
+package shapes;
+
 import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -19,6 +21,5 @@ class IsoscelesTriangleTest {
 	@Test
 	void testForException() {
 		assertThrows(IllegalArgumentException.class, () -> it.getShape(5, 6));
-
 	}
 }

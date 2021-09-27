@@ -1,3 +1,4 @@
+package shapes;
 
 public class ShapeFactory {
 	public Shapes getObjectForShapes(int number) {
@@ -13,8 +14,10 @@ public class ShapeFactory {
 			return new RightAngleMirrored();
 		case 5:
 			return new Rectangle();
+		case 6:
+			return new ExitMessage();
 		}
-		throw new NullPointerException();
+		throw new MisSelectionException();
 
 	}
 }

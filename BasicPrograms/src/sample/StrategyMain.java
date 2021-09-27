@@ -12,5 +12,4 @@ public class StrategyMain {
 		c = new Context(new Multiplication());
 		System.out.println("5 * 2 = " + c.executeStrategy(5, 2));
 	}
-
 }

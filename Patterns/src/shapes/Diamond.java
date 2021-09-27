@@ -1,3 +1,4 @@
+package shapes;
 public class Diamond implements Shapes {
 
 	public String getShape(int x) {

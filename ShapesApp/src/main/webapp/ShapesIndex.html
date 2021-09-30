@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<h2>Select a shape to be printed</h2>
+
+<form action="selectshape" method="post">
+	<input type="radio" onclick="javascript:shapeCheck();" name="shape"
+		id="shape" value="1">1.Diamond <br> <input type="radio"
+		onclick="javascript:shapeCheck();" name="shape" id="shape" value="2">2.Isosceles
+	<br> <input type="radio" onclick="javascript:shapeCheck();"
+		name="shape" id="shape" value="3">3.Right Angle <br> <input
+		type="radio" onclick="javascript:shapeCheck();" name="shape"
+		id="shape" value="4">4.Right Angle Mirrored <br> <input
+		type="radio" onclick="javascript:shapeCheck();" name="shape" id="rec"
+		value="5">5.Rectangle <br> <br>
+	<div id="forAll" style="visibility: hidden">
+		<label for="rows">Enter number of rows: </label> <input type="text"
+			id="rows" name="rows"> <br>
+	</div>
+	<div id="ifRectangle" style="visibility: hidden">
+		<label for="columns">Enter number of Columns: </label> <input
+			type="text" id="columns" name="columns"> <br>
+	</div>
+	<br> <input type="submit" value="Submit">
+</form>
+</html>
+
+
+
+<script type="text/javascript">
+function shapeCheck() {
+    if (document.getElementById('shape').checked) {
+        document.getElementById('forAll').style.visibility = 'visible';
+        document.getElementById('ifRectangle').style.visibility = 'hidden';
+    }
+    if (document.getElementById('rec').checked) {
+        document.getElementById('forAll').style.visibility = 'visible';
+        document.getElementById('ifRectangle').style.visibility = 'visible';
+    }
+
+}
+</script>

@@ -1,7 +1,7 @@
 class Student {
 	String name;
 	int no;
-	static String school = "abc";
+	String school = "abc";
 
 	void show() {
 		System.out.println(name + " " + no + " " + school);
@@ -21,9 +21,10 @@ public class StaticKeyword {
 		Student s1 = new Student();
 		s1.name = "hari";
 		s1.no = 2;
-		Student.school = "aaa";
+		s1.school = "aaa";
 
 		s1.show();
+		s.show();
 	}
 
 }

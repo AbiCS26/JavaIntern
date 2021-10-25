@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<servlet>
+		<servlet-name>create</servlet-name>
+		<servlet-class>crud.CreateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>create</servlet-name>
+		<url-pattern>/createservlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>update</servlet-name>
+		<servlet-class>crud.UpdateServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>update</servlet-name>
+		<url-pattern>/updateservlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>read</servlet-name>
+		<servlet-class>crud.ReadServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>read</servlet-name>
+		<url-pattern>/readservlet</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>delete</servlet-name>
+		<servlet-class>crud.DeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>delete</servlet-name>
+		<url-pattern>/deleteservlet</url-pattern>
+	</servlet-mapping>
+</web-app>

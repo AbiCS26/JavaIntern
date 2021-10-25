@@ -1,8 +1,6 @@
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class ComapreCollections {
 
@@ -20,20 +18,16 @@ public class ComapreCollections {
 		listB.add("b");
 		listB.add("d");
 
-		TreeMap<String, Integer> tm = new TreeMap<String, Integer>();
+		HashMap<String, Integer> tm = new HashMap<>();
 		tm.put("a", 100);
 		tm.put("c", 200);
 		tm.put("c", 300);
 		tm.put("d", 400);
 		tm.put("b", 400);
 
-		System.out.println(Collections.max(listB));
-		for (Map.Entry<String, Integer> t : tm.entrySet()) {
-			if (listA.contains(t.getKey())) {
-				System.out.println("The value is: " + t.getValue());
-			}
-		}
-		System.out.println(listA.containsAll(tm.keySet()));
+		System.out.println(tm.remove("a"));
+		System.out.println(tm.remove("a"));
+
 	}
 
 }
